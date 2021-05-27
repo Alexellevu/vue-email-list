@@ -5,9 +5,9 @@ const app =new Vue({
 
 
     el:'#app',
-    listamail:[],
+    
     data:{
-
+        listamail:[],
     },
 
     methods:{
@@ -15,19 +15,16 @@ const app =new Vue({
     },
 
     mounted(){
-        
-        axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-        .then(response => {
-            console.log(response.data.response);
+        for(var i=0; i<10; i++){
+            axios
+                .get("https://flynn.boolean.careers/exercises/api/random/mail")
+                .then(response => {
+                    console.log(response.data.response);
             
+                    this.listamail.push(response.data.response);
+                })
+        }  
+        console.log(this.listamail);
 
-            for(var i=0; i>10; i++){
-                this.listamail.push(response.data.response[i]);
-            }
-
-            console.log(this.listamail);
-            
-           
-        })
     }
 })
