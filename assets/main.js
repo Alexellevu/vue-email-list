@@ -8,10 +8,11 @@ const app =new Vue({
     
     data:{
         listamail:[],
+       
     },
 
     methods:{
-
+      
     },
 
     mounted(){
@@ -24,7 +25,7 @@ const app =new Vue({
                     this.listamail.push(response.data.response);
                 })
         }  
-        console.log(this.listamail);
+        
 
     }
 })
